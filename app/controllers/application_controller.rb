@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    binding.pry
     redirect "/articles/"
 
   end
@@ -18,7 +19,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get "articles/new" do
-    @article = Article.new
+    @article = Article.new(title: params["title"], content: params["content"])
     erb :new
   end
 
