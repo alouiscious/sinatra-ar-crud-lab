@@ -1,0 +1,12 @@
+<h2></h2>
+<form method="POST" action="/articles/<%= @article.id %>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+  <label for="revised">Revise Article</label>
+  <input id="revised" type="text" name="article[title]" value="<%= @atricle.title %>">
+  
+  <label for="content">Revise Content</label>
+  <input id="content" type="textarea" name="article[content]" value="<%= @atricle.content %>">
+  
+  <input type="submit">
+</form>
